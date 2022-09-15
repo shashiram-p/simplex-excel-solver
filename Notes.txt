@@ -1,0 +1,105 @@
+Excel Name ranges
+
+------Name ranges------------------
+AI	='Analog Cabinets'!$C$3:$C$30	
+AI_A	='Analog Cabinets'!$D$3:$D$30
+AI_B	='Analog Cabinets'!$E$3:$E$30
+AIR	='Analog Cabinets'!$F$3:$F$30
+AIR_A	='Analog Cabinets'!$G$3:$G$30
+AIR_B	='Analog Cabinets'!$H$3:$H$30
+AIR_C	='Analog Cabinets'!$I$3:$I$30
+AO	='Analog Cabinets'!$J$3:$J$30
+AO_A	='Analog Cabinets'!$K$3:$K$30
+AO_B	='Analog Cabinets'!$L$3:$L$30
+AOR	='Analog Cabinets'!$M$3:$M$30
+BALANCE_A	='Analog Cabinets'!$Y$43:$Z$53
+CABINET1_A	='Analog Cabinets'!$Y$3:$Y$30
+CABINET2_A	='Analog Cabinets'!$Z$3:$Z$30
+CABLES_A	='Analog Cabinets'!$AA$3:$AA$30
+CABLES_SIZES_A	='Analog Cabinets'!$B$3:$B$30
+CARDS_A	='Analog Cabinets'!$Y$31:$Z$41
+
+DI	='Digital Cabinets'!$C$4:$C$42
+DI_A	='Digital Cabinets'!$D$4:$D$42
+DI_B	='Digital Cabinets'!$E$4:$E$42
+DO	='Digital Cabinets'!$F$4:$F$42
+DO_A	='Digital Cabinets'!$G$4:$G$42
+DO_B	='Digital Cabinets'!$H$4:$H$42
+DOR	='Digital Cabinets'!$I$4:$I$42
+DOR_A	='Digital Cabinets'!$J$4:$J$42
+DOR_B	='Digital Cabinets'!$K$4:$K$42
+
+CABINET1_D	='Digital Cabinets'!$O$4:$O$42
+CABINET2_D	='Digital Cabinets'!$P$4:$P$42
+
+BALANCE_D	='Digital Cabinets'!$O$53:$P$61
+CABLES_D	='Digital Cabinets'!$Q$4:$Q$42
+CABLES_SIZES_D	='Digital Cabinets'!$B$4:$B$42
+CARDS_D	='Digital Cabinets'!$O$43:$P$51
+------Name ranges------------------
+
+
+------Solver parameters---------
+VARIABLE CELLS	
+$O$4:$P$51
+
+CONSTRAINTS
+cabinet1_D = binary
+cabinet2_D = binary
+CARDS_D	= integer
+Cables_D = 1
+BALANCE_D >= 0
+
+$O$64 <= 3960
+$P$64 <= 3960
+
+$R$43 = $D$51
+$R$44 = $E$51
+$R$45 = $C$51
+$R$46 = $G$51
+$R$47 = $H$51
+$R$48 = $F$51
+$R$49 = $J$51
+$R$50 = $K$51
+$R$51 = $I$51
+
+Objective function cell
+$V$51
+
+------Solver parameters---------
+
+
+----Data Description - A1 to K42-------------
+Column A - Name of the Cable
+Column B - Cable Size - no of small cables in a cable
+Column C to K - There are 3 Categories of signals, and each one of this category has 3 types.
+
+Total - Row 43 - this is the normal totals
+
+Minimum number of modules - these are 9 values calculated using the formulas
+Total Number Of Modules - All the above 9 values are added - Important Note - This value is manually calculated, which is the minimum no. of modules required to connect the wires into modules.
+
+Problem Statement
+1. Solver is assigning each cable to either cabinet1 or cabinet2  (There are two cabinets, these cabinets contains modules)
+2. Solver is also providing which type of module should be placed in which cabinet, with total number of modules less than or equal minimum no. of modules calcalulated above
+
+Spare Points
+This are not the variables, these can be calculated using variables values(after executing the solver) and the cables data
+
+----Data Description--------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
